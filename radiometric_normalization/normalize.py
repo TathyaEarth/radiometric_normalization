@@ -88,7 +88,7 @@ def _linear_transformation_to_lut(linear_transformation,
         logging.debug(
             'Normalize: Calculating lut values for gain '
             '{} and offset {}'.format(gain, offset))
-        lut = numpy.arange(min_value, max_value + 1, dtype=numpy.float)
+        lut = numpy.arange(min_value, max_value + 1, dtype=numpy.float32)
         return gain * lut + offset
 
     lut = gain_offset_to_lut(linear_transformation.gain,
